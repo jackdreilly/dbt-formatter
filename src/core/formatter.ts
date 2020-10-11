@@ -168,7 +168,8 @@ export default class Formatter {
     // a new line.
     const noNewLine =
       nextToken &&
-      (nextToken.item.type === tokenTypes.RESERVED || nextToken.item.type === tokenTypes.OPERATOR ||
+      (nextToken.item.type === tokenTypes.RESERVED ||
+        nextToken.item.type === tokenTypes.OPERATOR ||
         DbtConfig.dbtControl.includes(nextToken.item.value.toLowerCase()));
     if (noNewLine) {
       return query;
@@ -208,7 +209,8 @@ export default class Formatter {
     } else if (
       nextToken &&
       DbtConfig.dbtControl.includes(nextToken.item.value.toLowerCase()) &&
-      (secondNextToken && secondNextToken.item.value.toLowerCase() === 'is_incremental')
+      secondNextToken &&
+      secondNextToken.item.value.toLowerCase() === 'is_incremental'
     ) {
       this.indentation.reset();
       this.inIncrementalBlock = true;

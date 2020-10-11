@@ -30,11 +30,11 @@ export default class Tokenizer {
       "N''": "((N'[^N'\\\\]*(?:\\\\.[^N'\\\\]*)*('|$))+)",
     };
 
-    return types.map(t => patterns[t]).join('|');
+    return types.map((t) => patterns[t]).join('|');
   };
 
   private static createLineCommentRegex = (ids: string[]): RegExp => {
-    return new RegExp(`^((?:${ids.map(id => escapeRegExp(id)).join('|')}).*?(?:\n|$))`);
+    return new RegExp(`^((?:${ids.map((id) => escapeRegExp(id)).join('|')}).*?(?:\n|$))`);
   };
 
   private static createMultiWordRegex = (words: string[]): RegExp => {
@@ -51,7 +51,7 @@ export default class Tokenizer {
   };
 
   private static createParenRegex = (parens: string[]): RegExp => {
-    return new RegExp('^(' + parens.map(p => Tokenizer.escapeParen(p)).join('|') + ')', 'i');
+    return new RegExp('^(' + parens.map((p) => Tokenizer.escapeParen(p)).join('|') + ')', 'i');
   };
 
   private static createPlaceholderRegex = (types: string[], pattern: string): RegExp => {
@@ -223,7 +223,7 @@ export default class Tokenizer {
         input,
         type: tokenTypes.PLACEHOLDER,
         regex: Tokenizer.createPlaceholderRegex(this.cfg.namedPlaceholderTypes, '[a-zA-Z0-9._$]+'),
-        parseFunc: v => v.slice(1),
+        parseFunc: (v) => v.slice(1),
         description: 'Indent named placeholder token',
       },
       13: {
@@ -233,7 +233,7 @@ export default class Tokenizer {
           this.cfg.namedPlaceholderTypes,
           Tokenizer.createStringPattern(this.cfg.stringTypes)
         ),
-        parseFunc: v =>
+        parseFunc: (v) =>
           Tokenizer.getEscapedPlaceholderKey({
             key: v.slice(2, -1),
             quoteChar: v.slice(-1),
@@ -244,7 +244,7 @@ export default class Tokenizer {
         input,
         type: tokenTypes.PLACEHOLDER,
         regex: Tokenizer.createPlaceholderRegex(this.cfg.indexedPlaceholderTypes, '[0-9]*'),
-        parseFunc: v => v.slice(1),
+        parseFunc: (v) => v.slice(1),
         description: 'Index placeholder token',
       },
       15: {

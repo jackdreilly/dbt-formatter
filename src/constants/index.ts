@@ -188,6 +188,6 @@ export const presets: SqlPresets = {
     default: ['#', '--', '{#', '#}'],
   },
   specialWordChars: {
-    default: [""],
+    default: [''],
   },
 };
