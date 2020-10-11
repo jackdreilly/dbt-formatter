@@ -5,8 +5,8 @@ export const DbtConfig: Preset = {
   dbtControl: ['and', 'as', 'else', 'if', 'in', 'import', 'not', 'or', 'recursive'],
   topLevelWords: ['macro', 'endmacro', 'snapshot', 'endsnapshot'],
   singleLineWords: ['set'],
-  startMarkers: ['set', 'block', 'filter', 'for', 'if', 'macro', 'raw', 'call', 'snapshot'],
-  endMarkers: ['endblock', 'endfilter', 'endfor', 'endif', 'endmacro', 'endraw', 'endcall', 'endsnapshot'],
+  startMarkers: ['set', 'block', 'filter', 'for', 'if', 'macro', 'raw', 'call', 'snapshot', 'docs'],
+  endMarkers: ['endblock', 'endfilter', 'endfor', 'endif', 'endmacro', 'endraw', 'endcall', 'endsnapshot', 'enddocs'],
   doubleLineMarkers: ['endcall', 'endif', 'endmacro', 'endfor', 'endsnapshot'],
 };
 
