@@ -277,10 +277,20 @@ export default class Tokenizer {
       },
       19: {
         input,
+        type: tokenTypes.RESERVED,
+        regex: Tokenizer.getReservedWordToken(input, prev, /^st_\w+/),
+      },
+      20: {
+        input,
+        type: tokenTypes.RESERVED,
+        regex: Tokenizer.getReservedWordToken(input, prev, /^ST_\w+/),
+      },
+      21: {
+        input,
         type: tokenTypes.WORD,
         regex: Tokenizer.createWordRegex(this.cfg.specialWordChars),
       },
-      20: {
+      22: {
         input,
         type: tokenTypes.OPERATOR,
         regex: /^(!=|<>|==|<=|>=|!<|!>|\|\||::|->>|->|~~\*|~~|!~~\*|!~~|~\*|!~\*|!~|.)/,

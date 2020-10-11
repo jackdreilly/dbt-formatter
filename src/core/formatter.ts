@@ -280,6 +280,8 @@ export default class Formatter {
     const token = node.item;
     token.value =
       this.upper && !this.inTemplateBlock && !this.inVariableBlock ? token.value.toUpperCase() : token.value;
+    token.value =
+      token.value.startsWith('st_') || token.value.startsWith('ST_') ? token.value.toUpperCase() : token.value;
     return this.formatWithSpaces(node, query);
   };
 
