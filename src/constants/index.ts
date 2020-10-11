@@ -167,7 +167,7 @@ export const presets: SqlPresets = {
     // prettier-ignore
     default: ['AND', 'CROSS APPLY', 'CROSS JOIN', 'ELSE', 'END', 'INNER JOIN', 'JOIN', 'LEFT JOIN',
       'LEFT OUTER JOIN', 'OR', 'OUTER APPLY', 'OUTER JOIN', 'RIGHT JOIN', 'RIGHT OUTER JOIN',
-      'WHEN', 'XOR', 'ON']
+      'WHEN', 'XOR', 'ON', 'NATURAL INNER JOIN', 'NATURAL JOIN', 'NATURAL FULL OUTER JOIN']
   },
   stringTypes: {
     default: [`""`, "N''", "''", '``', '[]'],
