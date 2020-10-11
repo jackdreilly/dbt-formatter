@@ -302,7 +302,7 @@ export const arrowFormatConcat = {
   user_id,
   created_datetime_utc,
   parsed_json.value ['userId'] as user_id,
-  JSON ['company'] :: integer as company_id
+  JSON ['company']::integer as company_id
 FROM
   {{ ref('table_with_json') }} AS tbl,
   LATERAL FLATTEN(
@@ -327,7 +327,7 @@ export const arrowFormat = {
   user_id,
   created_datetime_utc,
   parsed_json.value ['userId'] as user_id,
-  JSON ['company'] :: integer as company_id
+  JSON ['company']::integer as company_id
 FROM
   {{ ref('table_with_json') }} AS tbl,
   LATERAL FLATTEN(
