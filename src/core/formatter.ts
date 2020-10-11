@@ -409,6 +409,9 @@ export default class Formatter {
     if (prevToken && prevToken.item.type === tokenTypes.OPERATOR) {
       return normalize.trimEnd(query) + normalize.removeWhitespace(token.value) + ' ';
     }
+    if (token.value === '::') {
+      return this.formatWithoutSpaces(node, query);
+    }
 
     return this.formatWithSpaces(node, query);
   };
