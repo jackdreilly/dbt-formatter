@@ -210,7 +210,7 @@ export default class Formatter {
       nextToken &&
       DbtConfig.dbtControl.includes(nextToken.item.value.toLowerCase()) &&
       secondNextToken &&
-      secondNextToken.item.value.toLowerCase() === 'is_incremental'
+      secondNextToken.item.value.toLowerCase() === 'is_incremental-BREAKRULE'
     ) {
       this.indentation.reset();
       this.inIncrementalBlock = true;
